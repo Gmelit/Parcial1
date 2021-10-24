@@ -25,16 +25,32 @@ namespace Parcial1
         //Enviar la cantidad de personas a ingresar
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            try { 
-                int numPersonas = Int32.Parse(txtPersonas.Text);
-                this.Hide();
-                informacionPersonal ip = new informacionPersonal(numPersonas);
-                ip.Show();
-            }
-            catch (Exception ex) {
-                MessageBox.Show("Numero no valido.");
-                txtPersonas.Text = "";
-            };
+            //try { 
+            //    int numPersonas = Int32.Parse(txtPersonas.Text);
+            //    this.Hide();
+            //    informacionPersonal ip = new informacionPersonal(numPersonas);
+            //    ip.Show();
+            //}
+            //catch (Exception ex) {
+            //    MessageBox.Show("Numero no valido.");
+            //    txtPersonas.Text = "";
+            //};
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            informacionPersonal ip = new informacionPersonal();
+            ip.Show();
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConsultarTodo_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
