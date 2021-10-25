@@ -218,15 +218,21 @@ namespace Parcial1
 
             var consulta = "UPDATE PERSONA SET ESTADO = 0 WHERE DNI = " + dele;
 
+            string query = "UPDATE MASCOTA SET DNIDUEÑO = NULL WHERE DNIDUEÑO = " + dele;
             var comando = new SqlCommand(consulta, conexion);
+            var coman = new SqlCommand(query, conexion);
+
+            
 
             conexion.Open();
 
             var cantidadDeRegistros = comando.ExecuteNonQuery();
+            
 
             if (cantidadDeRegistros > 0)
             {
                 MessageBox.Show("Persona eliminada");
+                coman.ExecuteNonQuery();
             }
             else
             {
@@ -265,6 +271,31 @@ namespace Parcial1
         private void btnActualizarMascota_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnMascotasPersona_Click(object sender, EventArgs e)
+        {
+
+
+            var conexion = new SqlConnection("Data Source = .; Initial Catalog = INFOPERSONA; Integrated Security = true;");
+
+            string dele = Interaction.InputBox("Ingrese el DNI de la persona que quiere conocer sus mascotas");
+
+            var consulta = "SELECT * FROM MASCOTA WHERE DNIDUEÑO = " + dele;
+
+            var comando = new SqlCommand(consulta, conexion);
+
+
+            var dataAdapter = new SqlDataAdapter(comando);
+
+
+            var dataSet = new DataSet();
+
+
+            dataAdapter.Fill(dataSet, "MascotasPersonas");
+
+
+            dgvConsultas.DataSource = dataSet.Tables[0];
         }
     }
     
