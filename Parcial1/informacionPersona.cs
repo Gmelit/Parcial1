@@ -7,30 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Parcial1
 {
-    public partial class informacionPersonal : Form
+    public partial class informacionPersona : Form
     {
 
-        string[] informacion;
-        string[] nombres;
-        string[] imagenes;
-        int cantidadP = 0;
+        string img = "";
 
-        public informacionPersonal()
+        public informacionPersona()
         {
             InitializeComponent();
-            txtReg.Text = cantidadP.ToString();
+            
         }
-        public informacionPersonal(int num)
-        {
-            InitializeComponent();
-            informacion = new string[num];
-            nombres = new string[num];
-            imagenes = new string[num];
-            txtReg.Enabled = false;
-        }
+        
         //Lista utilizada para con
         public readonly List<string> extencionImagen = new List<string> { "JPG", "JPE", "BMP", "GIF", "PNG" };
         //Evento utilizado para subir una imagen
@@ -46,7 +37,7 @@ namespace Parcial1
                     if (extencionImagen.Contains(imagen.Split('.').Last().ToUpper()) == true) 
                     { 
                         pbPerfil.Image = Image.FromFile(imagen);
-                        imagenes[cantidadP] = imagen;
+                        img = imagen;
                     }
                     else {
                         MessageBox.Show("Archivo seleccionado no valido. \nformatos de imagen permitidos (JPG, JPE, BMP, GIF, PNG)");
@@ -61,7 +52,9 @@ namespace Parcial1
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Hide();
+            Bienvenida b1 = new Bienvenida();
+            b1.Show();
         }
 
         //Evento utilizado para guardar la información ingresada en los controles
@@ -75,21 +68,40 @@ namespace Parcial1
             string direccion = txtDireccion.Text;
             string fecha = dtpNacimiento.Text;
             //
-            if (string.IsNullOrEmpty(nombre) == true || string.IsNullOrEmpty(apellidos) == true || string.IsNullOrEmpty(dni) == true || string.IsNullOrEmpty(genero) == true || string.IsNullOrEmpty(ciudad) == true
-                || string.IsNullOrEmpty(direccion) == true)
+            if (string.IsNullOrEmpty(nombre) == true || string.IsNullOrEmpty(apellidos) == true || string.IsNullOrEmpty(dni) == true || string.IsNullOrEmpty(genero) 
+                )
             {
-                MessageBox.Show("Todos los campos deben de estar llenos");
+                MessageBox.Show("Debe de llenar los campos obligatorios");
             }
             else
             {
-                informacion[cantidadP] = "\n" + "Nombre completo: " + nombre + " " + apellidos + "\n" +
-                    "Genero: " + genero + "\n" + "DNI: " + dni + "\n" + "Ciudad: " + ciudad + "\n" +
-                    "Dirección: " + direccion + "\n" + "Fecha de nacimiento: " + fecha;
+                var conexion = new SqlConnection("Data Source = .; Initial Catalog = INFOPERSONA; Integrated Security = true;");
 
-                nombres[cantidadP] = nombre + " " + apellidos + " " + dni;
-                
-                cantidadP += 1;
-                txtReg.Text = cantidadP.ToString();
+                char deli = '/';
+                string[] ap = fecha.Split(deli);
+                fecha = ap[2] + "/" + ap[1] + "/" + ap[0];
+
+       
+                var insert = "INSERT INTO PERSONA VALUES('" + dni + "' ,'" + nombre + "', '" + apellidos +"'," +
+                    "'" + genero + "','" + ciudad + "','" + direccion + "','" + img + "','" + fecha + "','" + 1 + "')";
+
+                var comando = new SqlCommand(insert, conexion);
+               
+                conexion.Open();
+
+                var cantidadDeRegistros = comando.ExecuteNonQuery();
+
+                if (cantidadDeRegistros > 0)
+                {
+                    MessageBox.Show("Persona ingresada");
+                }
+                else
+                {
+                    MessageBox.Show("Persona no ingresada, hubo algun error");
+                }
+
+                conexion.Close();
+
 
                 //Limpiar los controles
                 txtNombre.Text = "";
@@ -102,15 +114,7 @@ namespace Parcial1
                 //Setear el valor minimo del control de fecha para limpiarlo en el valueChange
                 dtpNacimiento.Value = DateTimePicker.MinimumDateTime;
                 //validar si aun hay personas por agregar
-                if (cantidadP == informacion.Length)
-
-                {
-                    MessageBox.Show("Se han agregado todas las personas");
-                    this.Hide();
-                    consultaInformacion ci = new consultaInformacion(informacion, nombres, imagenes);
-                    ci.Show();
-
-                }
+             
                     
             }
         }
@@ -127,6 +131,11 @@ namespace Parcial1
             {
                 dtpNacimiento.Format = DateTimePickerFormat.Short;
             }
+        }
+
+        private void informacionPersona_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -4,14 +4,14 @@ namespace Parcial1
     partial class Bienvenida
     {
         /// <summary>
-        /// Variable del diseñador necesaria.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Limpiar los recursos que se estén usando.
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -21,249 +21,277 @@ namespace Parcial1
             base.Dispose(disposing);
         }
 
-        #region Código generado por el Diseñador de Windows Forms
+        #region Windows Form Designer generated code
 
         /// <summary>
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido de este método con el editor de código.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnIngresar = new System.Windows.Forms.Button();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnConsultarTodo = new System.Windows.Forms.Button();
-            this.gridPersonas = new System.Windows.Forms.DataGridView();
-            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ciudad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridPersonas)).BeginInit();
+            this.btnIngresarPersona = new System.Windows.Forms.Button();
+            this.btnConsultarPersona = new System.Windows.Forms.Button();
+            this.btnActualizarPersona = new System.Windows.Forms.Button();
+            this.btnEliminarPersona = new System.Windows.Forms.Button();
+            this.btnConsultarPersonas = new System.Windows.Forms.Button();
+            this.btnIngresarMascota = new System.Windows.Forms.Button();
+            this.btnConsultarMascota = new System.Windows.Forms.Button();
+            this.btnActualizarMascota = new System.Windows.Forms.Button();
+            this.btnEliminarMascota = new System.Windows.Forms.Button();
+            this.btnConsultarMascotas = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnMascotasPersona = new System.Windows.Forms.Button();
+            this.dgvConsultas = new System.Windows.Forms.DataGridView();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultas)).BeginInit();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // groupBox1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btnIngresar, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btnConsultar, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.btnEditar, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.btnEliminar, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.btnConsultarTodo, 0, 6);
-            this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 7;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(758, 309);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.groupBox1.Controls.Add(this.btnSalir);
+            this.groupBox1.Controls.Add(this.dgvConsultas);
+            this.groupBox1.Controls.Add(this.btnMascotasPersona);
+            this.groupBox1.Controls.Add(this.btnLimpiar);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.groupBox3);
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(21, 21);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(764, 674);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnConsultarPersonas);
+            this.groupBox2.Controls.Add(this.btnEliminarPersona);
+            this.groupBox2.Controls.Add(this.btnActualizarPersona);
+            this.groupBox2.Controls.Add(this.btnConsultarPersona);
+            this.groupBox2.Controls.Add(this.btnIngresarPersona);
+            this.groupBox2.Location = new System.Drawing.Point(31, 88);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(327, 307);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Persona";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btnConsultarMascotas);
+            this.groupBox3.Controls.Add(this.btnEliminarMascota);
+            this.groupBox3.Controls.Add(this.btnActualizarMascota);
+            this.groupBox3.Controls.Add(this.btnConsultarMascota);
+            this.groupBox3.Controls.Add(this.btnIngresarMascota);
+            this.groupBox3.Location = new System.Drawing.Point(414, 88);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(320, 307);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Mascota";
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(320, 7);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(311, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 29);
-            this.label1.TabIndex = 0;
+            this.label1.Size = new System.Drawing.Size(144, 29);
+            this.label1.TabIndex = 2;
             this.label1.Text = "Bienvenido";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // btnIngresarPersona
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(254, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(250, 24);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "¿Que acción desea realizar?";
+            this.btnIngresarPersona.Location = new System.Drawing.Point(56, 47);
+            this.btnIngresarPersona.Name = "btnIngresarPersona";
+            this.btnIngresarPersona.Size = new System.Drawing.Size(214, 38);
+            this.btnIngresarPersona.TabIndex = 3;
+            this.btnIngresarPersona.Text = "Ingresar persona";
+            this.btnIngresarPersona.UseVisualStyleBackColor = true;
+            this.btnIngresarPersona.Click += new System.EventHandler(this.btnIngresarPersona_Click);
             // 
-            // btnIngresar
+            // btnConsultarPersona
             // 
-            this.btnIngresar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIngresar.Location = new System.Drawing.Point(3, 91);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(752, 38);
-            this.btnIngresar.TabIndex = 2;
-            this.btnIngresar.Text = "Ingresar persona";
-            this.btnIngresar.UseVisualStyleBackColor = true;
-            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
+            this.btnConsultarPersona.Location = new System.Drawing.Point(56, 91);
+            this.btnConsultarPersona.Name = "btnConsultarPersona";
+            this.btnConsultarPersona.Size = new System.Drawing.Size(214, 40);
+            this.btnConsultarPersona.TabIndex = 4;
+            this.btnConsultarPersona.Text = "Consultar persona";
+            this.btnConsultarPersona.UseVisualStyleBackColor = true;
+            this.btnConsultarPersona.Click += new System.EventHandler(this.btnConsultarPersona_Click);
             // 
-            // btnConsultar
+            // btnActualizarPersona
             // 
-            this.btnConsultar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConsultar.Location = new System.Drawing.Point(3, 135);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(752, 38);
-            this.btnConsultar.TabIndex = 3;
-            this.btnConsultar.Text = "Consultar persona";
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            this.btnActualizarPersona.Location = new System.Drawing.Point(56, 137);
+            this.btnActualizarPersona.Name = "btnActualizarPersona";
+            this.btnActualizarPersona.Size = new System.Drawing.Size(214, 41);
+            this.btnActualizarPersona.TabIndex = 5;
+            this.btnActualizarPersona.Text = "Actualizar persona";
+            this.btnActualizarPersona.UseVisualStyleBackColor = true;
+            this.btnActualizarPersona.Click += new System.EventHandler(this.btnActualizarPersona_Click);
             // 
-            // btnEditar
+            // btnEliminarPersona
             // 
-            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEditar.Location = new System.Drawing.Point(3, 179);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(752, 38);
-            this.btnEditar.TabIndex = 4;
-            this.btnEditar.Text = "Editar persona";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEliminarPersona.Location = new System.Drawing.Point(56, 184);
+            this.btnEliminarPersona.Name = "btnEliminarPersona";
+            this.btnEliminarPersona.Size = new System.Drawing.Size(214, 42);
+            this.btnEliminarPersona.TabIndex = 6;
+            this.btnEliminarPersona.Text = "Eliminar persona";
+            this.btnEliminarPersona.UseVisualStyleBackColor = true;
+            this.btnEliminarPersona.Click += new System.EventHandler(this.btnEliminarPersona_Click);
             // 
-            // btnEliminar
+            // btnConsultarPersonas
             // 
-            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminar.Location = new System.Drawing.Point(3, 223);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(752, 38);
-            this.btnEliminar.TabIndex = 5;
-            this.btnEliminar.Text = "Eliminar persona";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnConsultarPersonas.Location = new System.Drawing.Point(56, 232);
+            this.btnConsultarPersonas.Name = "btnConsultarPersonas";
+            this.btnConsultarPersonas.Size = new System.Drawing.Size(214, 40);
+            this.btnConsultarPersonas.TabIndex = 7;
+            this.btnConsultarPersonas.Text = "Consultar personas";
+            this.btnConsultarPersonas.UseVisualStyleBackColor = true;
+            this.btnConsultarPersonas.Click += new System.EventHandler(this.btnConsultarPersonas_Click);
             // 
-            // btnConsultarTodo
+            // btnIngresarMascota
             // 
-            this.btnConsultarTodo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConsultarTodo.Location = new System.Drawing.Point(3, 267);
-            this.btnConsultarTodo.Name = "btnConsultarTodo";
-            this.btnConsultarTodo.Size = new System.Drawing.Size(752, 39);
-            this.btnConsultarTodo.TabIndex = 6;
-            this.btnConsultarTodo.Text = "Consultar personas ingresadas";
-            this.btnConsultarTodo.UseVisualStyleBackColor = true;
-            this.btnConsultarTodo.Click += new System.EventHandler(this.btnConsultarTodo_Click);
+            this.btnIngresarMascota.Location = new System.Drawing.Point(51, 47);
+            this.btnIngresarMascota.Name = "btnIngresarMascota";
+            this.btnIngresarMascota.Size = new System.Drawing.Size(213, 38);
+            this.btnIngresarMascota.TabIndex = 0;
+            this.btnIngresarMascota.Text = "Ingresar mascota";
+            this.btnIngresarMascota.UseVisualStyleBackColor = true;
+            this.btnIngresarMascota.Click += new System.EventHandler(this.btnIngresarMascota_Click);
             // 
-            // gridPersonas
+            // btnConsultarMascota
             // 
-            this.gridPersonas.AllowUserToAddRows = false;
-            this.gridPersonas.AllowUserToDeleteRows = false;
-            this.gridPersonas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridPersonas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridPersonas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.gridPersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridPersonas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dni,
-            this.Nombre,
-            this.Apellidos,
-            this.Fecha,
-            this.Direccion,
-            this.Ciudad,
-            this.Estado});
-            this.gridPersonas.Location = new System.Drawing.Point(12, 340);
-            this.gridPersonas.Name = "gridPersonas";
-            this.gridPersonas.ReadOnly = true;
-            this.gridPersonas.Size = new System.Drawing.Size(758, 203);
-            this.gridPersonas.TabIndex = 8;
+            this.btnConsultarMascota.Location = new System.Drawing.Point(51, 91);
+            this.btnConsultarMascota.Name = "btnConsultarMascota";
+            this.btnConsultarMascota.Size = new System.Drawing.Size(213, 40);
+            this.btnConsultarMascota.TabIndex = 1;
+            this.btnConsultarMascota.Text = "Consultar mascota";
+            this.btnConsultarMascota.UseVisualStyleBackColor = true;
+            this.btnConsultarMascota.Click += new System.EventHandler(this.btnConsultarMascota_Click);
             // 
-            // dni
+            // btnActualizarMascota
             // 
-            this.dni.DataPropertyName = "string";
-            this.dni.HeaderText = "Dni";
-            this.dni.Name = "dni";
-            this.dni.ReadOnly = true;
+            this.btnActualizarMascota.Location = new System.Drawing.Point(51, 137);
+            this.btnActualizarMascota.Name = "btnActualizarMascota";
+            this.btnActualizarMascota.Size = new System.Drawing.Size(213, 41);
+            this.btnActualizarMascota.TabIndex = 2;
+            this.btnActualizarMascota.Text = "Actualizar mascota";
+            this.btnActualizarMascota.UseVisualStyleBackColor = true;
+            this.btnActualizarMascota.Click += new System.EventHandler(this.btnActualizarMascota_Click);
             // 
-            // Nombre
+            // btnEliminarMascota
             // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
+            this.btnEliminarMascota.Location = new System.Drawing.Point(51, 184);
+            this.btnEliminarMascota.Name = "btnEliminarMascota";
+            this.btnEliminarMascota.Size = new System.Drawing.Size(213, 42);
+            this.btnEliminarMascota.TabIndex = 3;
+            this.btnEliminarMascota.Text = "Eliminar mascota";
+            this.btnEliminarMascota.UseVisualStyleBackColor = true;
+            this.btnEliminarMascota.Click += new System.EventHandler(this.btnEliminarMascota_Click);
             // 
-            // Apellidos
+            // btnConsultarMascotas
             // 
-            this.Apellidos.HeaderText = "Apellidos";
-            this.Apellidos.Name = "Apellidos";
-            this.Apellidos.ReadOnly = true;
+            this.btnConsultarMascotas.Location = new System.Drawing.Point(51, 232);
+            this.btnConsultarMascotas.Name = "btnConsultarMascotas";
+            this.btnConsultarMascotas.Size = new System.Drawing.Size(213, 40);
+            this.btnConsultarMascotas.TabIndex = 4;
+            this.btnConsultarMascotas.Text = "Consultar mascotas";
+            this.btnConsultarMascotas.UseVisualStyleBackColor = true;
+            this.btnConsultarMascotas.Click += new System.EventHandler(this.btnConsultarMascotas_Click);
             // 
-            // Fecha
+            // btnLimpiar
             // 
-            this.Fecha.HeaderText = "Fecha de nacimiento";
-            this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
+            this.btnLimpiar.Location = new System.Drawing.Point(414, 401);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(128, 58);
+            this.btnLimpiar.TabIndex = 3;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // Direccion
+            // btnMascotasPersona
             // 
-            this.Direccion.HeaderText = "Dirección";
-            this.Direccion.Name = "Direccion";
-            this.Direccion.ReadOnly = true;
+            this.btnMascotasPersona.Location = new System.Drawing.Point(31, 401);
+            this.btnMascotasPersona.Name = "btnMascotasPersona";
+            this.btnMascotasPersona.Size = new System.Drawing.Size(327, 58);
+            this.btnMascotasPersona.TabIndex = 4;
+            this.btnMascotasPersona.Text = "Consultar mascotas de una persona";
+            this.btnMascotasPersona.UseVisualStyleBackColor = true;
             // 
-            // Ciudad
+            // dgvConsultas
             // 
-            this.Ciudad.HeaderText = "Ciudad";
-            this.Ciudad.Name = "Ciudad";
-            this.Ciudad.ReadOnly = true;
+            this.dgvConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvConsultas.DefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvConsultas.Location = new System.Drawing.Point(31, 490);
+            this.dgvConsultas.Name = "dgvConsultas";
+            this.dgvConsultas.Size = new System.Drawing.Size(703, 178);
+            this.dgvConsultas.TabIndex = 5;
             // 
-            // Estado
+            // btnSalir
             // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
+            this.btnSalir.Location = new System.Drawing.Point(602, 402);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(132, 57);
+            this.btnSalir.TabIndex = 6;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // Bienvenida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 555);
-            this.Controls.Add(this.gridPersonas);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(816, 707);
+            this.Controls.Add(this.groupBox1);
             this.Name = "Bienvenida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bienvenida";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridPersonas)).EndInit();
+            this.Load += new System.EventHandler(this.Bienvenida_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultas)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnIngresar;
-        private System.Windows.Forms.Button btnConsultar;
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnConsultarTodo;
-        private System.Windows.Forms.DataGridView gridPersonas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dni;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ciudad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridView dgvConsultas;
+        private System.Windows.Forms.Button btnMascotasPersona;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnConsultarMascotas;
+        private System.Windows.Forms.Button btnEliminarMascota;
+        private System.Windows.Forms.Button btnActualizarMascota;
+        private System.Windows.Forms.Button btnConsultarMascota;
+        private System.Windows.Forms.Button btnIngresarMascota;
+        private System.Windows.Forms.Button btnConsultarPersonas;
+        private System.Windows.Forms.Button btnEliminarPersona;
+        private System.Windows.Forms.Button btnActualizarPersona;
+        private System.Windows.Forms.Button btnConsultarPersona;
+        private System.Windows.Forms.Button btnIngresarPersona;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
-

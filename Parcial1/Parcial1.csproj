@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,28 +53,30 @@
     <Compile Include="Bienvenida.Designer.cs">
       <DependentUpon>Bienvenida.cs</DependentUpon>
     </Compile>
-    <Compile Include="consultaInformacion.cs">
+    <Compile Include="InformacionMascota.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="consultaInformacion.Designer.cs">
-      <DependentUpon>consultaInformacion.cs</DependentUpon>
+    <Compile Include="InformacionMascota.Designer.cs">
+      <DependentUpon>InformacionMascota.cs</DependentUpon>
     </Compile>
-    <Compile Include="informacionPersonal.cs">
+    <Compile Include="informacionPersona.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="informacionPersonal.Designer.cs">
-      <DependentUpon>informacionPersonal.cs</DependentUpon>
+    <Compile Include="informacionPersona.Designer.cs">
+      <DependentUpon>informacionPersona.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mascota.cs" />
+    <Compile Include="Persona.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Bienvenida.resx">
       <DependentUpon>Bienvenida.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="consultaInformacion.resx">
-      <DependentUpon>consultaInformacion.cs</DependentUpon>
+    <EmbeddedResource Include="InformacionMascota.resx">
+      <DependentUpon>InformacionMascota.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="informacionPersonal.resx">
-      <DependentUpon>informacionPersonal.cs</DependentUpon>
+    <EmbeddedResource Include="informacionPersona.resx">
+      <DependentUpon>informacionPersona.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -96,6 +99,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

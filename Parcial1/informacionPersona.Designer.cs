@@ -1,7 +1,7 @@
 ﻿
 namespace Parcial1
 {
-    partial class informacionPersonal
+    partial class informacionPersona
     {
         /// <summary>
         /// Required designer variable.
@@ -49,10 +49,7 @@ namespace Parcial1
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtReg = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
@@ -149,9 +146,9 @@ namespace Parcial1
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(46, 222);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 24);
+            this.label5.Size = new System.Drawing.Size(58, 24);
             this.label5.TabIndex = 4;
-            this.label5.Text = "DNI";
+            this.label5.Text = "DNI *";
             // 
             // label6
             // 
@@ -165,11 +162,11 @@ namespace Parcial1
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 162);
+            this.label4.Location = new System.Drawing.Point(14, 162);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 24);
+            this.label4.Size = new System.Drawing.Size(94, 24);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Género";
+            this.label4.Text = "Género *";
             // 
             // cbGenero
             // 
@@ -188,20 +185,20 @@ namespace Parcial1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 105);
+            this.label3.Location = new System.Drawing.Point(6, 105);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 24);
+            this.label3.Size = new System.Drawing.Size(111, 24);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Apellidos";
+            this.label3.Text = "Apellidos *";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 58);
+            this.label2.Location = new System.Drawing.Point(9, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 24);
+            this.label2.Size = new System.Drawing.Size(99, 24);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Nombre";
+            this.label2.Text = "Nombre *";
             // 
             // groupBox2
             // 
@@ -269,35 +266,16 @@ namespace Parcial1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(229, 23);
+            this.label1.Location = new System.Drawing.Point(246, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(299, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "INFORMACIÓN PERSONAL";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(655, 40);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(131, 24);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "#Registrados";
-            // 
-            // txtReg
-            // 
-            this.txtReg.Enabled = false;
-            this.txtReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg.Location = new System.Drawing.Point(792, 40);
-            this.txtReg.Name = "txtReg";
-            this.txtReg.Size = new System.Drawing.Size(49, 29);
-            this.txtReg.TabIndex = 4;
-            // 
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(747, 103);
+            this.btnGuardar.Location = new System.Drawing.Point(747, 107);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(94, 33);
             this.btnGuardar.TabIndex = 5;
@@ -305,20 +283,10 @@ namespace Parcial1
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(747, 264);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(94, 41);
-            this.btnLimpiar.TabIndex = 6;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            // 
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(747, 448);
+            this.btnSalir.Location = new System.Drawing.Point(753, 254);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(94, 37);
             this.btnSalir.TabIndex = 7;
@@ -330,22 +298,20 @@ namespace Parcial1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // informacionPersonal
+            // informacionPersona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(864, 514);
+            this.ClientSize = new System.Drawing.Size(859, 514);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.txtReg);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "informacionPersonal";
+            this.Name = "informacionPersona";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Información";
+            this.Load += new System.EventHandler(this.informacionPersona_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -376,10 +342,7 @@ namespace Parcial1
         private System.Windows.Forms.DateTimePicker dtpNacimiento;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtReg;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnCargar;
         private System.Windows.Forms.PictureBox pbPerfil;
