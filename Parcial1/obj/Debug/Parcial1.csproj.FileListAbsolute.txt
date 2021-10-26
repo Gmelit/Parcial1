@@ -22,3 +22,16 @@ C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_1\Parcial1\Parci
 C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_1\Parcial1\Parcial1\obj\Debug\Parcial1.csproj.CoreCompileInputs.cache
 C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_1\Parcial1\Parcial1\obj\Debug\Parcial1.exe
 C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_1\Parcial1\Parcial1\obj\Debug\Parcial1.pdb
+C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1\Parcial1\obj\Debug\Parcial1.csproj.AssemblyReference.cache
+C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1\Parcial1\obj\Debug\Parcial1.Inicio.resources
+C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1\Parcial1\obj\Debug\Parcial1.FormularioPersona.resources
+C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1\Parcial1\obj\Debug\Parcial1.Properties.Resources.resources
+C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1\Parcial1\obj\Debug\Parcial1.csproj.GenerateResource.cache
+C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1\Parcial1\obj\Debug\Parcial1.csproj.CoreCompileInputs.cache
+C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1\Parcial1\obj\Debug\Parcial1.exe
+C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1\Parcial1\obj\Debug\Parcial1.pdb
+C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1\Parcial1\bin\Debug\Parcial1.exe.config
+C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1\Parcial1\bin\Debug\Parcial1.exe
+C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1\Parcial1\bin\Debug\Parcial1.pdb
+C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1\Parcial1\obj\Debug\Parcial1.FormularioMascota.resources
+C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1\Parcial1\obj\Debug\Parcial1.ConsultaXDocumento.resources

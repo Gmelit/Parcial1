@@ -46,34 +46,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bienvenida.cs">
+    <Compile Include="ConsultaXDocumento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bienvenida.Designer.cs">
-      <DependentUpon>Bienvenida.cs</DependentUpon>
+    <Compile Include="ConsultaXDocumento.Designer.cs">
+      <DependentUpon>ConsultaXDocumento.cs</DependentUpon>
     </Compile>
-    <Compile Include="consultaInformacion.cs">
+    <Compile Include="Mascota.cs" />
+    <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="consultaInformacion.Designer.cs">
-      <DependentUpon>consultaInformacion.cs</DependentUpon>
+    <Compile Include="Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="informacionPersonal.cs">
+    <Compile Include="FormularioMascota.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="informacionPersonal.Designer.cs">
-      <DependentUpon>informacionPersonal.cs</DependentUpon>
+    <Compile Include="FormularioMascota.Designer.cs">
+      <DependentUpon>FormularioMascota.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormularioPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioPersona.Designer.cs">
+      <DependentUpon>FormularioPersona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persona.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Bienvenida.resx">
-      <DependentUpon>Bienvenida.cs</DependentUpon>
+    <EmbeddedResource Include="ConsultaXDocumento.resx">
+      <DependentUpon>ConsultaXDocumento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="consultaInformacion.resx">
-      <DependentUpon>consultaInformacion.cs</DependentUpon>
+    <EmbeddedResource Include="Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="informacionPersonal.resx">
-      <DependentUpon>informacionPersonal.cs</DependentUpon>
+    <EmbeddedResource Include="FormularioMascota.resx">
+      <DependentUpon>FormularioMascota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioPersona.resx">
+      <DependentUpon>FormularioPersona.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -84,6 +95,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\Mascota.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

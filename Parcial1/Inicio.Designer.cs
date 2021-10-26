@@ -1,7 +1,7 @@
 ﻿
 namespace Parcial1
 {
-    partial class Bienvenida
+    partial class Inicio
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -108,7 +108,7 @@ namespace Parcial1
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(752, 38);
             this.btnIngresar.TabIndex = 2;
-            this.btnIngresar.Text = "Ingresar persona";
+            this.btnIngresar.Text = "Registrar persona";
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
@@ -121,7 +121,7 @@ namespace Parcial1
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(752, 38);
             this.btnConsultar.TabIndex = 3;
-            this.btnConsultar.Text = "Consultar persona";
+            this.btnConsultar.Text = "Consultar por documento";
             this.btnConsultar.UseVisualStyleBackColor = true;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
@@ -134,8 +134,9 @@ namespace Parcial1
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(752, 38);
             this.btnEditar.TabIndex = 4;
-            this.btnEditar.Text = "Editar persona";
+            this.btnEditar.Text = "Editar por documento";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -146,8 +147,9 @@ namespace Parcial1
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(752, 38);
             this.btnEliminar.TabIndex = 5;
-            this.btnEliminar.Text = "Eliminar persona";
+            this.btnEliminar.Text = "Eliminar persona del sistema";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnConsultarTodo
             // 
@@ -158,7 +160,7 @@ namespace Parcial1
             this.btnConsultarTodo.Name = "btnConsultarTodo";
             this.btnConsultarTodo.Size = new System.Drawing.Size(752, 39);
             this.btnConsultarTodo.TabIndex = 6;
-            this.btnConsultarTodo.Text = "Consultar personas ingresadas";
+            this.btnConsultarTodo.Text = "Consultar personas ingresadas en el sistema";
             this.btnConsultarTodo.UseVisualStyleBackColor = true;
             this.btnConsultarTodo.Click += new System.EventHandler(this.btnConsultarTodo_Click);
             // 
@@ -228,16 +230,16 @@ namespace Parcial1
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
             // 
-            // Bienvenida
+            // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 555);
             this.Controls.Add(this.gridPersonas);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Bienvenida";
+            this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Bienvenida";
+            this.Text = "Sistema de gestión de mascotas";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
