@@ -22,7 +22,7 @@ namespace Parcial1
             
         }
         
-        //Lista utilizada para con
+        //Lista utilizada para validar la extensión de la imagen
         public readonly List<string> extencionImagen = new List<string> { "JPG", "JPE", "BMP", "GIF", "PNG" };
         //Evento utilizado para subir una imagen
         private void btnCargar_Click(object sender, EventArgs e)
@@ -49,7 +49,7 @@ namespace Parcial1
                 MessageBox.Show("Ocurrio un error inesperado.\npor favor vuelva a intentarlo");
             }
         }
-
+        // Evento utilizado para salir del formulario actual
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -133,9 +133,5 @@ namespace Parcial1
             }
         }
 
-        private void informacionPersona_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

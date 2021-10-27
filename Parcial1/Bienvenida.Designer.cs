@@ -116,7 +116,6 @@ namespace Parcial1
             this.label1.Size = new System.Drawing.Size(144, 29);
             this.label1.TabIndex = 2;
             this.label1.Text = "Bienvenido";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // groupBox3
             // 
@@ -255,7 +254,6 @@ namespace Parcial1
             this.Name = "Bienvenida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bienvenida";
-            this.Load += new System.EventHandler(this.Bienvenida_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultas)).EndInit();

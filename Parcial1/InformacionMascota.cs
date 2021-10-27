@@ -17,8 +17,8 @@ namespace Parcial1
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        // Evento que nos permite guardar la mascota ingresada
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
             string nombre = txtNombre.Text;
             string tipo = cbTipo.GetItemText(cbTipo.SelectedItem);
@@ -71,17 +71,13 @@ namespace Parcial1
             }
 
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        // Salir.
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
             Bienvenida b1 = new Bienvenida();
             b1.Show();
         }
+
     }
 }
