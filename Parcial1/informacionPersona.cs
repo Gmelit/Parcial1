@@ -60,6 +60,7 @@ namespace Parcial1
         //Evento utilizado para guardar la información ingresada en los controles
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            // Extracción de la información que tenga los controles.
             string nombre = txtNombre.Text;
             string apellidos = txtApellidos.Text;
             string genero = cbGenero.GetItemText(cbGenero.SelectedItem);
@@ -67,7 +68,8 @@ namespace Parcial1
             string ciudad = cbCiudad.GetItemText(cbCiudad.SelectedItem);
             string direccion = txtDireccion.Text;
             string fecha = dtpNacimiento.Text;
-            //
+
+            // Validación de los campos obligatorios.
             if (string.IsNullOrEmpty(nombre) == true || string.IsNullOrEmpty(apellidos) == true || string.IsNullOrEmpty(dni) == true || string.IsNullOrEmpty(genero) 
                 )
             {
@@ -75,13 +77,15 @@ namespace Parcial1
             }
             else
             {
+                // Conexión DB.
                 var conexion = new SqlConnection("Data Source = .; Initial Catalog = INFOPERSONA; Integrated Security = true;");
 
+                // Conversión del formato de la fecha.
                 char deli = '/';
                 string[] ap = fecha.Split(deli);
                 fecha = ap[2] + "/" + ap[1] + "/" + ap[0];
 
-       
+                // Creación de la inserción.
                 var insert = "INSERT INTO PERSONA VALUES('" + dni + "' ,'" + nombre + "', '" + apellidos +"'," +
                     "'" + genero + "','" + ciudad + "','" + direccion + "','" + img + "','" + fecha + "','" + 1 + "')";
 
@@ -89,6 +93,7 @@ namespace Parcial1
                
                 conexion.Open();
 
+                // Se ejecuta la inserción y se valida si se realizó.
                 var cantidadDeRegistros = comando.ExecuteNonQuery();
 
                 if (cantidadDeRegistros > 0)
@@ -133,5 +138,9 @@ namespace Parcial1
             }
         }
 
+        private void informacionPersona_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

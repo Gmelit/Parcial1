@@ -20,10 +20,12 @@ namespace Parcial1
         // Evento que nos permite guardar la mascota ingresada
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            // Extracción de los datos que haya en los campos.
             string nombre = txtNombre.Text;
             string tipo = cbTipo.GetItemText(cbTipo.SelectedItem);
             string dueño = txtDniDueño.Text;
 
+            // Validación de los datos obligatorios.
             if(string.IsNullOrEmpty(nombre) == true || string.IsNullOrEmpty(tipo) == true
             )
             {
@@ -32,10 +34,12 @@ namespace Parcial1
             }
             else
             {
+                // Conexión BD.
                 var conexion = new SqlConnection("Data Source = .; Initial Catalog = INFOPERSONA; Integrated Security = true;");
 
                 string insert;
 
+                // Validación y creación de inserción.
                 if (string.IsNullOrEmpty(dueño) == true)
                 {
                     insert = "INSERT INTO MASCOTA VALUES('" + nombre + "' ,'" + tipo + "', NULL," +
@@ -52,8 +56,9 @@ namespace Parcial1
 
                 conexion.Open();
 
+                // Se ejecuta la inserción y se valida si se realizó.
                 try
-                {
+                {   
                     var cantidadDeRegistros = comando.ExecuteNonQuery();
 
                     if (cantidadDeRegistros > 0)
@@ -73,6 +78,7 @@ namespace Parcial1
 
                 conexion.Close();
 
+                // Se vacian los campos.
                 txtDniDueño.Text = "";
                 txtNombre.Text = "";
                 cbTipo.SelectedItem = -1;
@@ -80,6 +86,8 @@ namespace Parcial1
             }
 
         }
+
+
         // Salir.
         private void button2_Click(object sender, EventArgs e)
         {
