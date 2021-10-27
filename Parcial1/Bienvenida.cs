@@ -245,8 +245,17 @@ namespace Parcial1
             string nombre = Interaction.InputBox("Nuevo nombre");
             string dueño = Interaction.InputBox("Nuevo dueño");
 
+            string consulta;
 
-            string consulta = "UPDATE MASCOTA SET NOMBRE = '" + nombre + "',DNIDUEÑO = '" + dueño + "' WHERE ID =" + dni;
+            if (String.IsNullOrEmpty(dueño) == true)
+            {
+                consulta = "UPDATE MASCOTA SET NOMBRE = '" + nombre + "',DNIDUEÑO = NULL WHERE ID =" + dni;
+            }
+            else
+            {
+                consulta = "UPDATE MASCOTA SET NOMBRE = '" + nombre + "',DNIDUEÑO = '" + dueño + "' WHERE ID =" + dni;
+            }
+
 
             var comando = new SqlCommand(consulta, conexion);
 

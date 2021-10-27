@@ -34,9 +34,18 @@ namespace Parcial1
             {
                 var conexion = new SqlConnection("Data Source = .; Initial Catalog = INFOPERSONA; Integrated Security = true;");
 
-              
-                var insert = "INSERT INTO MASCOTA VALUES('" + nombre + "' ,'" + tipo + "', '" + dueño + "'," +
+                string insert;
+
+                if (string.IsNullOrEmpty(dueño) == true)
+                {
+                    insert = "INSERT INTO MASCOTA VALUES('" + nombre + "' ,'" + tipo + "', NULL," +
                     "'" + 1 + "')";
+                }
+                else
+                {
+                    insert = "INSERT INTO MASCOTA VALUES('" + nombre + "' ,'" + tipo + "', '" + dueño + "'," +
+                    "'" + 1 + "')";
+                }
 
                 
                 var comando = new SqlCommand(insert, conexion);
