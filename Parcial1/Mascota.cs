@@ -13,6 +13,7 @@ namespace Parcial1
         private string nombre;
         private string descripcion;
         private int fk_animal;
+        private Boolean bandera = false;
 
         public Mascota() { 
         
@@ -32,5 +33,6 @@ namespace Parcial1
         public string Nombre { get => nombre; set => nombre = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public int Fk_animal { get => fk_animal; set => fk_animal = value; }
+        public bool Bandera { get => bandera; set => bandera = value; }
     }
 }

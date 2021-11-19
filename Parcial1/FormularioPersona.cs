@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,6 @@ namespace Parcial1
     {
 
         public Persona persona;
-
         public FormularioPersona()
         {
             InitializeComponent();
@@ -25,7 +25,7 @@ namespace Parcial1
             InitializeComponent();
 
             txtNombre.Text = p.Nombre1;
-            txtApellidos.Text = p.Nombre1;
+            txtApellidos.Text = p.Apellido;
             cbGenero.SelectedItem = p.Genero;
             txtDNI.Text = p.Dni;
             cbCiudad.SelectedItem = p.Ciudad;
@@ -55,6 +55,7 @@ namespace Parcial1
                 btnGuardar.Visible = false;
                 btnGuardar.Enabled = false;
                 consultar_mascotas(p);
+                persona = p;
             }
             else
             {
@@ -63,6 +64,8 @@ namespace Parcial1
                 txtDNI.ReadOnly = true;
                 btnLimpiar.Visible = false;
                 btnLimpiar.Enabled = false;
+                consultar_mascotas(p);
+                persona = p;
             }
         }
         //Lista utilizada para con
@@ -119,9 +122,26 @@ namespace Parcial1
             else
             {
                 byte[] foto = ImagenAByte(pbPerfil.Image);
-                persona = new Persona(dni, nombre, apellidos, genero, ciudad, Convert.ToDateTime(fecha), direccion, foto);
+                if (persona != null) {
+                    persona.Dni = dni;
+                    persona.Nombre1 = nombre;
+                    persona.Apellido = apellidos;
+                    persona.Genero = genero;
+                    persona.Ciudad = ciudad;
+                    persona.FechaNacimiento = Convert.ToDateTime(fecha);
+                    persona.Direccion = direccion;
+                    persona.Imagen = foto;
 
-                ingresarPersona(persona);
+                    actualizar_persona(persona);
+                }
+                else
+                {
+                    persona = new Persona(dni, nombre, apellidos, genero, ciudad, Convert.ToDateTime(fecha), direccion, foto);
+
+                    ingresar_persona(persona);
+
+                }
+                
 
             }
         }
@@ -157,11 +177,17 @@ namespace Parcial1
 
             if (mascotaSeleccionada != null)
             {
+                
                 using (FormularioMascota formMascota = new FormularioMascota() { mascotaInfo = mascotaSeleccionada })
                 {
                     if (formMascota.ShowDialog() == DialogResult.OK)
                     {
+                        if (mascotaSeleccionada.Id != 0)
+                        {
+                            mascotaSeleccionada.Bandera = true;
+                        }
                         mascotaBindingSource.EndEdit();
+                        mascotaBindingSource.ResetBindings(true);
                         btnEditarMascota.Focus();
                     }
                 }
@@ -170,9 +196,8 @@ namespace Parcial1
 
 
         }
-        public void ingresarPersona(Persona p)
+        public void ingresar_persona(Persona p)
         {
-
             SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConexionTercer);
             conexion.Open();
             SqlCommand comando = new SqlCommand("sp_registrar_persona", conexion);
@@ -194,28 +219,72 @@ namespace Parcial1
                 id_persona = Convert.ToInt32(reader["Id"].ToString());
             }
 
-            string query = "insert into mascota([FK_persona],[nombre],[descripcion],[FK_animal]) VALUES ";
             foreach (Mascota item in mascotaBindingSource)
             {
-                query += "("+id_persona+","+"'"+item.Nombre+"'," + "'"+item.Descripcion+"',"+item.Fk_animal+"),";
+                item.Fk_persona = id_persona;
+                insertar_mascota(item);
 
             }
-            query = query.Remove( query.Length - 1);
-
             conexion.Close();
+            this.Close();
+        }
+        public void actualizar_persona(Persona p)
+        {
+            SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConexionTercer);
+            conexion.Open();
+            SqlCommand comando = new SqlCommand("sp_actualizar_persona", conexion);
 
-            insertar_mascota(query);
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Add(new SqlParameter("@id", p.Id));
+            comando.Parameters.Add(new SqlParameter("@numero_identificacion", p.Dni));
+            comando.Parameters.Add(new SqlParameter("@nombre", p.Nombre1));
+            comando.Parameters.Add(new SqlParameter("@apellido", p.Apellido));
+            comando.Parameters.Add(new SqlParameter("@genero", p.Genero));
+            comando.Parameters.Add(new SqlParameter("@ciudad", p.Ciudad));
+            comando.Parameters.Add(new SqlParameter("@fecha_nacimiento", p.FechaNacimiento));
+            comando.Parameters.Add(new SqlParameter("@direccion", p.Direccion));
+            comando.Parameters.Add(new SqlParameter("@foto_perfil", p.Imagen));
 
+            comando.ExecuteNonQuery();
+            foreach (Mascota item in mascotaBindingSource)
+            {
+                if (item.Bandera.Equals(true)) {
+                    actualizar_mascota(item);
+                } else if (item.Id == 0) {
+                    item.Fk_persona = p.Id;
+                    insertar_mascota(item);
+                }
+            }
+            conexion.Close();
             this.Close();
         }
 
-
-        public void insertar_mascota(string query_mascota) {
+        public void actualizar_mascota(Mascota mascota)
+        {
             SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConexionTercer);
             conexion.Open();
-            SqlCommand command = new SqlCommand(query_mascota, conexion);
+            SqlCommand command = new SqlCommand("sp_actualizar_mascota", conexion);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.Add(new SqlParameter("@nombre", mascota.Nombre));
+            command.Parameters.Add(new SqlParameter("@descripcion", mascota.Descripcion));
+            command.Parameters.Add(new SqlParameter("@fk_animal", mascota.Fk_animal));
+            command.Parameters.Add(new SqlParameter("@id", mascota.Id));
+            command.ExecuteNonQuery();
+            conexion.Close();
+        }
 
-            command.ExecuteReader();
+        public void insertar_mascota(Mascota mascota) {
+
+            SqlConnection conexion = new SqlConnection(Properties.Settings.Default.ConexionTercer);
+            conexion.Open();
+
+            SqlCommand command = new SqlCommand("sp_insertar_mascotas", conexion);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.Add(new SqlParameter("@fk_persona", mascota.Fk_persona));
+            command.Parameters.Add(new SqlParameter("@nombre", mascota.Nombre));
+            command.Parameters.Add(new SqlParameter("@descripcion", mascota.Descripcion));
+            command.Parameters.Add(new SqlParameter("@fk_animal", mascota.Fk_animal));
+            command.ExecuteNonQuery();
 
             conexion.Close();
         }
@@ -244,7 +313,6 @@ namespace Parcial1
                 mascotaBindingSource.Add(m);
             }
             conexion.Close();
-
         }
 
 
@@ -256,8 +324,9 @@ namespace Parcial1
 
         public static Image byteAImagen(byte[] img)
         {
-            ImageConverter converter = new ImageConverter();
-            return (Image)converter.ConvertTo(img, typeof(Image));
+            var imageStream = new MemoryStream(img);
+            Image imagen = Image.FromStream(imageStream);
+            return imagen;
         }
 
 

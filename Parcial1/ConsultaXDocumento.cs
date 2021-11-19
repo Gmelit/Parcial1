@@ -27,7 +27,7 @@ namespace Parcial1
             this.lblTitulo.Text = titulo;
             this.accion = accion;
         }
-
+        List<Mascota> listaMascotas;
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             string documento = this.tbDocumento.Text;
@@ -59,6 +59,10 @@ namespace Parcial1
                         {
                             frmP = new FormularioPersona(p, accion);
                             frmP.Show();
+                        }
+                        else
+                        {
+
                             mensaje = "Persona buscada no encontrada";
                         }
                         break;
@@ -139,6 +143,7 @@ namespace Parcial1
                 persona.Direccion = reader["direccion"].ToString();
                 persona.Genero = reader["genero"].ToString();
                 persona.FechaNacimiento = Convert.ToDateTime(reader["fecha_nacimiento"].ToString());
+                persona.Imagen = (byte[])reader["foto_perfil"];
                 //respuesta = Convert.ToInt32(reader["respuesta"].ToString());
 
             }

@@ -62,8 +62,7 @@ namespace Parcial1
             personas.Clear();
 
             while (reader.Read())
-            {    //Every new row will create a new dictionary that holds the columns
-                //reader["numero_identificacion"].ToString();
+            {    
 
                 personas.Add(new Persona(
                     reader["numero_identificacion"].ToString(),
@@ -96,6 +95,8 @@ namespace Parcial1
                 );
                 ++contador;
             }
+
+            gridPersonas.Refresh();
             conexion.Close();
 
         }

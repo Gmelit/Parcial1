@@ -53,22 +53,22 @@ namespace Parcial1
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.gridMascotas = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnEditarMascota = new System.Windows.Forms.Button();
-            this.btnAgregarMascota = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fkpersonaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fkanimalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mascotaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnEditarMascota = new System.Windows.Forms.Button();
+            this.btnAgregarMascota = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridMascotas)).BeginInit();
-            this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mascotaBindingSource)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtNombre
@@ -245,7 +245,7 @@ namespace Parcial1
             // pbPerfil
             // 
             this.pbPerfil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.pbPerfil.Location = new System.Drawing.Point(565, 3);
+            this.pbPerfil.Location = new System.Drawing.Point(564, 3);
             this.pbPerfil.Name = "pbPerfil";
             this.pbPerfil.Size = new System.Drawing.Size(130, 83);
             this.pbPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -297,7 +297,7 @@ namespace Parcial1
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(22, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(462, 25);
+            this.label1.Size = new System.Drawing.Size(460, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "INFORMACIÓN PERSONAL";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -364,7 +364,7 @@ namespace Parcial1
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.035874F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 95.96413F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 286F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 288F));
             this.tableLayoutPanel2.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.pbPerfil, 2, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 12);
@@ -389,6 +389,45 @@ namespace Parcial1
             this.gridMascotas.Name = "gridMascotas";
             this.gridMascotas.Size = new System.Drawing.Size(774, 150);
             this.gridMascotas.TabIndex = 10;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // fkpersonaDataGridViewTextBoxColumn
+            // 
+            this.fkpersonaDataGridViewTextBoxColumn.DataPropertyName = "Fk_persona";
+            this.fkpersonaDataGridViewTextBoxColumn.HeaderText = "Fk_persona";
+            this.fkpersonaDataGridViewTextBoxColumn.Name = "fkpersonaDataGridViewTextBoxColumn";
+            this.fkpersonaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            // 
+            // fkanimalDataGridViewTextBoxColumn
+            // 
+            this.fkanimalDataGridViewTextBoxColumn.DataPropertyName = "Fk_animal";
+            this.fkanimalDataGridViewTextBoxColumn.HeaderText = "Fk_animal";
+            this.fkanimalDataGridViewTextBoxColumn.Name = "fkanimalDataGridViewTextBoxColumn";
+            this.fkanimalDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // mascotaBindingSource
+            // 
+            this.mascotaBindingSource.DataSource = typeof(Parcial1.Mascota);
             // 
             // tableLayoutPanel3
             // 
@@ -452,45 +491,6 @@ namespace Parcial1
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // fkpersonaDataGridViewTextBoxColumn
-            // 
-            this.fkpersonaDataGridViewTextBoxColumn.DataPropertyName = "Fk_persona";
-            this.fkpersonaDataGridViewTextBoxColumn.HeaderText = "Fk_persona";
-            this.fkpersonaDataGridViewTextBoxColumn.Name = "fkpersonaDataGridViewTextBoxColumn";
-            this.fkpersonaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            // 
-            // fkanimalDataGridViewTextBoxColumn
-            // 
-            this.fkanimalDataGridViewTextBoxColumn.DataPropertyName = "Fk_animal";
-            this.fkanimalDataGridViewTextBoxColumn.HeaderText = "Fk_animal";
-            this.fkanimalDataGridViewTextBoxColumn.Name = "fkanimalDataGridViewTextBoxColumn";
-            this.fkanimalDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // mascotaBindingSource
-            // 
-            this.mascotaBindingSource.DataSource = typeof(Parcial1.Mascota);
-            // 
             // FormularioPersona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -509,8 +509,8 @@ namespace Parcial1
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridMascotas)).EndInit();
-            this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mascotaBindingSource)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

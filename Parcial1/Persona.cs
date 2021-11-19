@@ -18,6 +18,7 @@ namespace Parcial1
         private DateTime fechaNacimiento;
         private Boolean estado;
         private byte[] imagen;
+        private Boolean bandera;
 
         public Persona()
         {
@@ -36,6 +37,9 @@ namespace Parcial1
             Estado = estado;
         }
 
+        public string obtener_nombre_completo() { 
+            return this.Nombre1 + " " + this.Apellido;
+        }
         public string Nombre1 { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }
         public string Genero { get => genero; set => genero = value; }
@@ -46,5 +50,6 @@ namespace Parcial1
         public byte[] Imagen { get => imagen; set => imagen = value; }
         public bool Estado { get => estado; set => estado = value; }
         public int Id { get => id; set => id = value; }
+        public bool Bandera { get => bandera; set => bandera = value; }
     }
 }
