@@ -21,12 +21,18 @@ namespace Parcial1
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             // Extracción de los datos que haya en los campos.
-            string nombre = txtNombre.Text;
-            string tipo = cbTipo.GetItemText(cbTipo.SelectedItem);
-            string dueño = txtDniDueño.Text;
+
+
+            Mascota obMascota = new Mascota();
+
+
+            obMascota.SetNombre(txtNombre.Text);
+            obMascota.SetTipo(cbTipo.GetItemText(cbTipo.SelectedItem));
+            obMascota.SetDNIDUEÑO(txtDniDueño.Text);
+
 
             // Validación de los datos obligatorios.
-            if(string.IsNullOrEmpty(nombre) == true || string.IsNullOrEmpty(tipo) == true
+            if (string.IsNullOrEmpty(obMascota.GetNombre()) == true || string.IsNullOrEmpty(obMascota.GetTipo()) == true
             )
             {
                 MessageBox.Show("Debe completar los campos obligatorios");
@@ -35,20 +41,18 @@ namespace Parcial1
             else
             {
                 // Conexión BD.
-                var conexion = new SqlConnection("Data Source = .; Initial Catalog = INFOPERSONA; Integrated Security = true;");
+                var conexion = new SqlConnection(Properties.Settings.Default.conexion);
 
                 string insert;
 
                 // Validación y creación de inserción.
-                if (string.IsNullOrEmpty(dueño) == true)
+                if (string.IsNullOrEmpty(obMascota.GetDNIDUEÑO().ToString()) == true)
                 {
-                    insert = "INSERT INTO MASCOTA VALUES('" + nombre + "' ,'" + tipo + "', NULL," +
-                    "'" + 1 + "')";
+                    insert = "EXEC INSERTAR_MASCOTA '" + obMascota.GetNombre() + "', '" + obMascota.GetTipo() + "', NULL";
                 }
                 else
                 {
-                    insert = "INSERT INTO MASCOTA VALUES('" + nombre + "' ,'" + tipo + "', '" + dueño + "'," +
-                    "'" + 1 + "')";
+                    insert = "EXEC INSERTAR_MASCOTA '" + obMascota.GetNombre() + "', '" + obMascota.GetTipo() + "', '" + obMascota.GetDNIDUEÑO() +"'";
                 }
 
                 
@@ -57,22 +61,15 @@ namespace Parcial1
                 conexion.Open();
 
                 // Se ejecuta la inserción y se valida si se realizó.
-                try
-                {   
-                    var cantidadDeRegistros = comando.ExecuteNonQuery();
+                var cantidadDeRegistros = comando.ExecuteNonQuery();
 
-                    if (cantidadDeRegistros > 0)
-                    {
-                        MessageBox.Show("Mascota ingresada");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Mascota no ingresada, hubo algun error");
-                    }
-                }
-                catch(Exception ex)
+                if (cantidadDeRegistros > 0)
                 {
-                    MessageBox.Show("Dueño no registrado");
+                    MessageBox.Show("Mascota ingresada");
+                }
+                else
+                {
+                    MessageBox.Show("Mascota no ingresada, hubo algun error");
                 }
 
 

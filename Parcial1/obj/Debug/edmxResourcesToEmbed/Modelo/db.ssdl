@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="INFOPERSONAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="MASCOTA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="TIPO" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="DNIDUEÑO" Type="int" />
+    <Property Name="ESTADO" Type="smallint" />
+  </EntityType>
+  <EntityType Name="PERSONA">
+    <Key>
+      <PropertyRef Name="DNI" />
+    </Key>
+    <Property Name="DNI" Type="int" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="APELLIDOS" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="GENERO" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="CIUDAD" Type="varchar" MaxLength="30" />
+    <Property Name="DIRECCION" Type="varchar" MaxLength="30" />
+    <Property Name="FOTOPERFIL" Type="varbinary(max)" />
+    <Property Name="FECHANACIMIENTO" Type="date" />
+    <Property Name="ESTADO" Type="smallint" />
+  </EntityType>
+  <Association Name="FK__MASCOTA__DNIDUEÑ__37A5467C">
+    <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="0..1" />
+    <End Role="MASCOTA" Type="Self.MASCOTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSONA">
+        <PropertyRef Name="DNI" />
+      </Principal>
+      <Dependent Role="MASCOTA">
+        <PropertyRef Name="DNIDUEÑO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="ACTUALIZAR_MASCOTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="bigint" Mode="In" />
+    <Parameter Name="NOM" Type="varchar" Mode="In" />
+    <Parameter Name="NDUE" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ACTUALIZAR_PERSONA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DNI" Type="int" Mode="In" />
+    <Parameter Name="NOM" Type="varchar" Mode="In" />
+    <Parameter Name="APE" Type="varchar" Mode="In" />
+    <Parameter Name="GEN" Type="varchar" Mode="In" />
+    <Parameter Name="CIU" Type="varchar" Mode="In" />
+    <Parameter Name="DIR" Type="varchar" Mode="In" />
+    <Parameter Name="FECH" Type="date" Mode="In" />
+  </Function>
+  <Function Name="CONSULTAR_MASCOTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="CONSULTAR_MASCOTAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="CONSULTAR_MASCOTASPERSONA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DNI" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CONSULTAR_PERSONA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DNI" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CONSULTAR_PERSONAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ELIMINAR_MASCOTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ELIMINAR_PERSONA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DNI" Type="int" Mode="In" />
+  </Function>
+  <Function Name="INSERTAR_MASCOTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NOM" Type="varchar" Mode="In" />
+    <Parameter Name="TIPO" Type="varchar" Mode="In" />
+    <Parameter Name="DNID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="INSERTAR_PERSONA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DNI" Type="int" Mode="In" />
+    <Parameter Name="NOM" Type="varchar" Mode="In" />
+    <Parameter Name="APE" Type="varchar" Mode="In" />
+    <Parameter Name="GEN" Type="varchar" Mode="In" />
+    <Parameter Name="CIU" Type="varchar" Mode="In" />
+    <Parameter Name="DIR" Type="varchar" Mode="In" />
+    <Parameter Name="FOT" Type="varbinary(max)" Mode="In" />
+    <Parameter Name="FECH" Type="date" Mode="In" />
+  </Function>
+  <EntityContainer Name="INFOPERSONAModelStoreContainer">
+    <EntitySet Name="MASCOTA" EntityType="Self.MASCOTA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PERSONA" EntityType="Self.PERSONA" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__MASCOTA__DNIDUEÑ__37A5467C" Association="Self.FK__MASCOTA__DNIDUEÑ__37A5467C">
+      <End Role="PERSONA" EntitySet="PERSONA" />
+      <End Role="MASCOTA" EntitySet="MASCOTA" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

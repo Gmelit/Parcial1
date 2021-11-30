@@ -34,3 +34,12 @@ C:\Users\personal\Desktop\C#\Parcial3\Parcial1\bin\Debug\Parcial1.exe
 C:\Users\personal\Desktop\C#\Parcial3\Parcial1\bin\Debug\Parcial1.pdb
 C:\Users\personal\Desktop\C#\Parcial3\Parcial1\obj\Debug\Parcial1.informacionPersona.resources
 C:\Users\personal\Desktop\C#\Parcial3\Parcial1\obj\Debug\Parcial1.InformacionMascota.resources
+C:\Users\personal\Desktop\C#\Parcial4\Parcial1\obj\Debug\Parcial1.csproj.AssemblyReference.cache
+C:\Users\personal\Desktop\C#\Parcial4\Parcial1\obj\Debug\Parcial1.Bienvenida.resources
+C:\Users\personal\Desktop\C#\Parcial4\Parcial1\obj\Debug\Parcial1.InformacionMascota.resources
+C:\Users\personal\Desktop\C#\Parcial4\Parcial1\obj\Debug\Parcial1.informacionPersona.resources
+C:\Users\personal\Desktop\C#\Parcial4\Parcial1\obj\Debug\Parcial1.Properties.Resources.resources
+C:\Users\personal\Desktop\C#\Parcial4\Parcial1\obj\Debug\Parcial1.csproj.GenerateResource.cache
+C:\Users\personal\Desktop\C#\Parcial4\Parcial1\obj\Debug\Parcial1.csproj.CoreCompileInputs.cache
+C:\Users\personal\Desktop\C#\Parcial4\Parcial1\obj\Debug\Parcial1.exe
+C:\Users\personal\Desktop\C#\Parcial4\Parcial1\obj\Debug\Parcial1.pdb

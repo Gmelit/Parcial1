@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Proyecto4Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MASCOTA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="TIPO" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="DNIDUEÑO" Type="int" />
+          <Property Name="ESTADO" Type="smallint" />
+        </EntityType>
+        <EntityType Name="PERSONA">
+          <Key>
+            <PropertyRef Name="DNI" />
+          </Key>
+          <Property Name="DNI" Type="int" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="APELLIDOS" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="GENERO" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="CIUDAD" Type="varchar" MaxLength="30" />
+          <Property Name="DIRECCION" Type="varchar" MaxLength="30" />
+          <Property Name="FOTOPERFIL" Type="varbinary(max)" />
+          <Property Name="FECHANACIMIENTO" Type="date" />
+          <Property Name="ESTADO" Type="smallint" />
+        </EntityType>
+        <Association Name="FK__MASCOTA__DNIDUEÑ__37A5467C">
+          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="0..1" />
+          <End Role="MASCOTA" Type="Self.MASCOTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="DNI" />
+            </Principal>
+            <Dependent Role="MASCOTA">
+              <PropertyRef Name="DNIDUEÑO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="ACTUALIZAR_MASCOTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="bigint" Mode="In" />
+          <Parameter Name="NOM" Type="varchar" Mode="In" />
+          <Parameter Name="NDUE" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ACTUALIZAR_PERSONA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DNI" Type="int" Mode="In" />
+          <Parameter Name="NOM" Type="varchar" Mode="In" />
+          <Parameter Name="APE" Type="varchar" Mode="In" />
+          <Parameter Name="GEN" Type="varchar" Mode="In" />
+          <Parameter Name="CIU" Type="varchar" Mode="In" />
+          <Parameter Name="DIR" Type="varchar" Mode="In" />
+          <Parameter Name="FECH" Type="date" Mode="In" />
+        </Function>
+        <Function Name="CONSULTAR_MASCOTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="CONSULTAR_MASCOTAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="CONSULTAR_MASCOTASPERSONA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DNI" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CONSULTAR_PERSONA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DNI" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CONSULTAR_PERSONAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="ELIMINAR_MASCOTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ELIMINAR_PERSONA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DNI" Type="int" Mode="In" />
+        </Function>
+        <Function Name="INSERTAR_MASCOTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NOM" Type="varchar" Mode="In" />
+          <Parameter Name="TIPO" Type="varchar" Mode="In" />
+          <Parameter Name="DNID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="INSERTAR_PERSONA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DNI" Type="int" Mode="In" />
+          <Parameter Name="NOM" Type="varchar" Mode="In" />
+          <Parameter Name="APE" Type="varchar" Mode="In" />
+          <Parameter Name="GEN" Type="varchar" Mode="In" />
+          <Parameter Name="CIU" Type="varchar" Mode="In" />
+          <Parameter Name="DIR" Type="varchar" Mode="In" />
+          <Parameter Name="FOT" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="FECH" Type="date" Mode="In" />
+        </Function>
+        <EntityContainer Name="Proyecto4ModelStoreContainer">
+          <EntitySet Name="MASCOTA" EntityType="Self.MASCOTA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PERSONA" EntityType="Self.PERSONA" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__MASCOTA__DNIDUEÑ__37A5467C" Association="Self.FK__MASCOTA__DNIDUEÑ__37A5467C">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="MASCOTA" EntitySet="MASCOTA" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Proyecto4Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MASCOTA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TIPO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DNIDUEÑO" Type="Int32" />
+          <Property Name="ESTADO" Type="Int16" />
+          <NavigationProperty Name="PERSONA" Relationship="Self.FK__MASCOTA__DNIDUEÑ__37A5467C" FromRole="MASCOTA" ToRole="PERSONA" />
+        </EntityType>
+        <EntityType Name="PERSONA">
+          <Key>
+            <PropertyRef Name="DNI" />
+          </Key>
+          <Property Name="DNI" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="APELLIDOS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GENERO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CIUDAD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DIRECCION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FOTOPERFIL" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="FECHANACIMIENTO" Type="DateTime" Precision="0" />
+          <Property Name="ESTADO" Type="Int16" />
+          <NavigationProperty Name="MASCOTA" Relationship="Self.FK__MASCOTA__DNIDUEÑ__37A5467C" FromRole="PERSONA" ToRole="MASCOTA" />
+        </EntityType>
+        <Association Name="FK__MASCOTA__DNIDUEÑ__37A5467C">
+          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="0..1" />
+          <End Role="MASCOTA" Type="Self.MASCOTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="DNI" />
+            </Principal>
+            <Dependent Role="MASCOTA">
+              <PropertyRef Name="DNIDUEÑO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Proyecto4" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MASCOTA" EntityType="Self.MASCOTA" />
+          <EntitySet Name="PERSONA" EntityType="Self.PERSONA" />
+          <AssociationSet Name="FK__MASCOTA__DNIDUEÑ__37A5467C" Association="Self.FK__MASCOTA__DNIDUEÑ__37A5467C">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="MASCOTA" EntitySet="MASCOTA" />
+          </AssociationSet>
+          <FunctionImport Name="ACTUALIZAR_MASCOTA" ReturnType="Collection(String)">
+            <Parameter Name="ID" Mode="In" Type="Int64" />
+            <Parameter Name="NOM" Mode="In" Type="String" />
+            <Parameter Name="NDUE" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ACTUALIZAR_PERSONA" ReturnType="Collection(String)">
+            <Parameter Name="DNI" Mode="In" Type="Int32" />
+            <Parameter Name="NOM" Mode="In" Type="String" />
+            <Parameter Name="APE" Mode="In" Type="String" />
+            <Parameter Name="GEN" Mode="In" Type="String" />
+            <Parameter Name="CIU" Mode="In" Type="String" />
+            <Parameter Name="DIR" Mode="In" Type="String" />
+            <Parameter Name="FECH" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="CONSULTAR_MASCOTA" ReturnType="Collection(Proyecto4Model.CONSULTAR_MASCOTA_Result)">
+            <Parameter Name="ID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="CONSULTAR_MASCOTAS" ReturnType="Collection(Proyecto4Model.CONSULTAR_MASCOTAS_Result)" />
+          <FunctionImport Name="CONSULTAR_MASCOTASPERSONA" ReturnType="Collection(Proyecto4Model.CONSULTAR_MASCOTASPERSONA_Result)">
+            <Parameter Name="DNI" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CONSULTAR_PERSONA" ReturnType="Collection(Proyecto4Model.CONSULTAR_PERSONA_Result)">
+            <Parameter Name="DNI" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CONSULTAR_PERSONAS" ReturnType="Collection(Proyecto4Model.CONSULTAR_PERSONAS_Result)" />
+          <FunctionImport Name="ELIMINAR_MASCOTA" ReturnType="Collection(String)">
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ELIMINAR_PERSONA" ReturnType="Collection(String)">
+            <Parameter Name="DNI" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="INSERTAR_MASCOTA" ReturnType="Collection(String)">
+            <Parameter Name="NOM" Mode="In" Type="String" />
+            <Parameter Name="TIPO" Mode="In" Type="String" />
+            <Parameter Name="DNID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="INSERTAR_PERSONA" ReturnType="Collection(String)">
+            <Parameter Name="DNI" Mode="In" Type="Int32" />
+            <Parameter Name="NOM" Mode="In" Type="String" />
+            <Parameter Name="APE" Mode="In" Type="String" />
+            <Parameter Name="GEN" Mode="In" Type="String" />
+            <Parameter Name="CIU" Mode="In" Type="String" />
+            <Parameter Name="DIR" Mode="In" Type="String" />
+            <Parameter Name="FOT" Mode="In" Type="Binary" />
+            <Parameter Name="FECH" Mode="In" Type="DateTime" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="CONSULTAR_MASCOTA_Result">
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="TIPO" Nullable="false" MaxLength="30" />
+          <Property Type="Int32" Name="DNIDUENO" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="CONSULTAR_MASCOTAS_Result">
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="TIPO" Nullable="false" MaxLength="30" />
+          <Property Type="Int32" Name="DNIDUEÑO" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="CONSULTAR_MASCOTASPERSONA_Result">
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="TIPO" Nullable="false" MaxLength="30" />
+          <Property Type="Int32" Name="DNIDUEÑO" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="CONSULTAR_PERSONA_Result">
+          <Property Type="Int32" Name="DNI" Nullable="false" />
+          <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="APELLIDOS" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="GENERO" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="CIUDAD" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="DIRECCION" Nullable="true" MaxLength="30" />
+          <Property Type="DateTime" Name="FECHANACIMIENTO" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="CONSULTAR_PERSONAS_Result">
+          <Property Type="Int32" Name="DNI" Nullable="false" />
+          <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="APELLIDOS" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="GENERO" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="CIUDAD" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="DIRECCION" Nullable="true" MaxLength="30" />
+          <Property Type="DateTime" Name="FECHANACIMIENTO" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Proyecto4ModelStoreContainer" CdmEntityContainer="Proyecto4">
+          <EntitySetMapping Name="MASCOTA">
+            <EntityTypeMapping TypeName="Proyecto4Model.MASCOTA">
+              <MappingFragment StoreEntitySet="MASCOTA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="DNIDUEÑO" ColumnName="DNIDUEÑO" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PERSONA">
+            <EntityTypeMapping TypeName="Proyecto4Model.PERSONA">
+              <MappingFragment StoreEntitySet="PERSONA">
+                <ScalarProperty Name="DNI" ColumnName="DNI" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+                <ScalarProperty Name="GENERO" ColumnName="GENERO" />
+                <ScalarProperty Name="CIUDAD" ColumnName="CIUDAD" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="FOTOPERFIL" ColumnName="FOTOPERFIL" />
+                <ScalarProperty Name="FECHANACIMIENTO" ColumnName="FECHANACIMIENTO" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="ACTUALIZAR_MASCOTA" FunctionName="Proyecto4Model.Store.ACTUALIZAR_MASCOTA" />
+          <FunctionImportMapping FunctionImportName="ACTUALIZAR_PERSONA" FunctionName="Proyecto4Model.Store.ACTUALIZAR_PERSONA" />
+          <FunctionImportMapping FunctionImportName="CONSULTAR_MASCOTA" FunctionName="Proyecto4Model.Store.CONSULTAR_MASCOTA">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Proyecto4Model.CONSULTAR_MASCOTA_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="DNIDUENO" ColumnName="DNIDUENO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CONSULTAR_MASCOTAS" FunctionName="Proyecto4Model.Store.CONSULTAR_MASCOTAS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Proyecto4Model.CONSULTAR_MASCOTAS_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="DNIDUEÑO" ColumnName="DNIDUEÑO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CONSULTAR_MASCOTASPERSONA" FunctionName="Proyecto4Model.Store.CONSULTAR_MASCOTASPERSONA">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Proyecto4Model.CONSULTAR_MASCOTASPERSONA_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="DNIDUEÑO" ColumnName="DNIDUEÑO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CONSULTAR_PERSONA" FunctionName="Proyecto4Model.Store.CONSULTAR_PERSONA">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Proyecto4Model.CONSULTAR_PERSONA_Result">
+                <ScalarProperty Name="DNI" ColumnName="DNI" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+                <ScalarProperty Name="GENERO" ColumnName="GENERO" />
+                <ScalarProperty Name="CIUDAD" ColumnName="CIUDAD" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="FECHANACIMIENTO" ColumnName="FECHANACIMIENTO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CONSULTAR_PERSONAS" FunctionName="Proyecto4Model.Store.CONSULTAR_PERSONAS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Proyecto4Model.CONSULTAR_PERSONAS_Result">
+                <ScalarProperty Name="DNI" ColumnName="DNI" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+                <ScalarProperty Name="GENERO" ColumnName="GENERO" />
+                <ScalarProperty Name="CIUDAD" ColumnName="CIUDAD" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="FECHANACIMIENTO" ColumnName="FECHANACIMIENTO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ELIMINAR_MASCOTA" FunctionName="Proyecto4Model.Store.ELIMINAR_MASCOTA" />
+          <FunctionImportMapping FunctionImportName="ELIMINAR_PERSONA" FunctionName="Proyecto4Model.Store.ELIMINAR_PERSONA" />
+          <FunctionImportMapping FunctionImportName="INSERTAR_MASCOTA" FunctionName="Proyecto4Model.Store.INSERTAR_MASCOTA" />
+          <FunctionImportMapping FunctionImportName="INSERTAR_PERSONA" FunctionName="Proyecto4Model.Store.INSERTAR_PERSONA" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

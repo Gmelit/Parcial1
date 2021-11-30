@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Proyecto4ModelStoreContainer" CdmEntityContainer="Proyecto4">
+    <EntitySetMapping Name="MASCOTA">
+      <EntityTypeMapping TypeName="Proyecto4Model.MASCOTA">
+        <MappingFragment StoreEntitySet="MASCOTA">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="DNIDUEÑO" ColumnName="DNIDUEÑO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERSONA">
+      <EntityTypeMapping TypeName="Proyecto4Model.PERSONA">
+        <MappingFragment StoreEntitySet="PERSONA">
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+          <ScalarProperty Name="GENERO" ColumnName="GENERO" />
+          <ScalarProperty Name="CIUDAD" ColumnName="CIUDAD" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="FOTOPERFIL" ColumnName="FOTOPERFIL" />
+          <ScalarProperty Name="FECHANACIMIENTO" ColumnName="FECHANACIMIENTO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ACTUALIZAR_MASCOTA" FunctionName="Proyecto4Model.Store.ACTUALIZAR_MASCOTA" />
+    <FunctionImportMapping FunctionImportName="ACTUALIZAR_PERSONA" FunctionName="Proyecto4Model.Store.ACTUALIZAR_PERSONA" />
+    <FunctionImportMapping FunctionImportName="CONSULTAR_MASCOTA" FunctionName="Proyecto4Model.Store.CONSULTAR_MASCOTA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Proyecto4Model.CONSULTAR_MASCOTA_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="DNIDUENO" ColumnName="DNIDUENO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CONSULTAR_MASCOTAS" FunctionName="Proyecto4Model.Store.CONSULTAR_MASCOTAS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Proyecto4Model.CONSULTAR_MASCOTAS_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="DNIDUEÑO" ColumnName="DNIDUEÑO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CONSULTAR_MASCOTASPERSONA" FunctionName="Proyecto4Model.Store.CONSULTAR_MASCOTASPERSONA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Proyecto4Model.CONSULTAR_MASCOTASPERSONA_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="DNIDUEÑO" ColumnName="DNIDUEÑO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CONSULTAR_PERSONA" FunctionName="Proyecto4Model.Store.CONSULTAR_PERSONA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Proyecto4Model.CONSULTAR_PERSONA_Result">
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+          <ScalarProperty Name="GENERO" ColumnName="GENERO" />
+          <ScalarProperty Name="CIUDAD" ColumnName="CIUDAD" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="FECHANACIMIENTO" ColumnName="FECHANACIMIENTO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CONSULTAR_PERSONAS" FunctionName="Proyecto4Model.Store.CONSULTAR_PERSONAS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Proyecto4Model.CONSULTAR_PERSONAS_Result">
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+          <ScalarProperty Name="GENERO" ColumnName="GENERO" />
+          <ScalarProperty Name="CIUDAD" ColumnName="CIUDAD" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="FECHANACIMIENTO" ColumnName="FECHANACIMIENTO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ELIMINAR_MASCOTA" FunctionName="Proyecto4Model.Store.ELIMINAR_MASCOTA" />
+    <FunctionImportMapping FunctionImportName="ELIMINAR_PERSONA" FunctionName="Proyecto4Model.Store.ELIMINAR_PERSONA" />
+    <FunctionImportMapping FunctionImportName="INSERTAR_MASCOTA" FunctionName="Proyecto4Model.Store.INSERTAR_MASCOTA" />
+    <FunctionImportMapping FunctionImportName="INSERTAR_PERSONA" FunctionName="Proyecto4Model.Store.INSERTAR_PERSONA" />
+  </EntityContainerMapping>
+</Mapping>

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace Parcial1
 {
@@ -15,6 +16,8 @@ namespace Parcial1
     {
 
         string img = "";
+        Modelo.PERSONA persona = new Modelo.PERSONA();
+        Persona obPersona = new Persona();
 
         public informacionPersona()
         {
@@ -37,7 +40,6 @@ namespace Parcial1
                     if (extencionImagen.Contains(imagen.Split('.').Last().ToUpper()) == true) 
                     { 
                         pbPerfil.Image = Image.FromFile(imagen);
-                        img = imagen;
                     }
                     else {
                         MessageBox.Show("Archivo seleccionado no valido. \nformatos de imagen permitidos (JPG, JPE, BMP, GIF, PNG)");
@@ -61,42 +63,47 @@ namespace Parcial1
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             // Extracción de la información que tenga los controles.
-            string nombre = txtNombre.Text;
-            string apellidos = txtApellidos.Text;
-            string genero = cbGenero.GetItemText(cbGenero.SelectedItem);
-            string dni = txtDNI.Text;
-            string ciudad = cbCiudad.GetItemText(cbCiudad.SelectedItem);
-            string direccion = txtDireccion.Text;
-            string fecha = dtpNacimiento.Text;
+            
+            obPersona.SetNombre(txtNombre.Text);
+            obPersona.SetApellidos(txtApellidos.Text);
+            obPersona.SetGenero(cbGenero.GetItemText(cbGenero.SelectedItem));
+            obPersona.SetCiudad(cbCiudad.GetItemText(cbCiudad.SelectedItem));
+            obPersona.SetDNI(int.Parse(txtDNI.Text));
+            obPersona.SetDireccion(txtDireccion.Text);
+            obPersona.SetfechaNacimiento(Convert.ToDateTime(dtpNacimiento.Text));
+            obPersona.SetfotoPerfil(ImagenAByte(pbPerfil.Image));
 
             // Validación de los campos obligatorios.
-            if (string.IsNullOrEmpty(nombre) == true || string.IsNullOrEmpty(apellidos) == true || string.IsNullOrEmpty(dni) == true || string.IsNullOrEmpty(genero) 
+            if (string.IsNullOrEmpty(obPersona.GetNombre()) == true || string.IsNullOrEmpty(obPersona.GetApellidos()) == true || string.IsNullOrEmpty(obPersona.GetDNI().ToString()) == true || string.IsNullOrEmpty(obPersona.GetGenero()) 
                 )
             {
                 MessageBox.Show("Debe de llenar los campos obligatorios");
             }
             else
             {
-                // Conexión DB.
-                var conexion = new SqlConnection("Data Source = .; Initial Catalog = INFOPERSONA; Integrated Security = true;");
+                //// Conexión DB.
+                //var conexion = new SqlConnection(Properties.Settings.Default.conexion);
 
-                // Conversión del formato de la fecha.
-                char deli = '/';
-                string[] ap = fecha.Split(deli);
-                fecha = ap[2] + "/" + ap[1] + "/" + ap[0];
+                //// Creación de la inserción.
 
-                // Creación de la inserción.
-                var insert = "INSERT INTO PERSONA VALUES('" + dni + "' ,'" + nombre + "', '" + apellidos +"'," +
-                    "'" + genero + "','" + ciudad + "','" + direccion + "','" + img + "','" + fecha + "','" + 1 + "')";
+                //var comando = new SqlCommand("INSERTAR_PERSONA", conexion);
+                //comando.CommandType = CommandType.StoredProcedure;
+                //comando.Parameters.Add(new SqlParameter("@DNI", obPersona.GetDNI()));
+                //comando.Parameters.Add(new SqlParameter("@NOM", obPersona.GetNombre()));
+                //comando.Parameters.Add(new SqlParameter("@APE", obPersona.GetApellidos()));
+                //comando.Parameters.Add(new SqlParameter("@GEN", obPersona.GetGenero()));
+                //comando.Parameters.Add(new SqlParameter("@CIU", obPersona.GetCiudad()));
+                //comando.Parameters.Add(new SqlParameter("@DIR", obPersona.GetDireccion()));
+                //comando.Parameters.Add(new SqlParameter("@FOT", obPersona.GetfotoPerfil()));
+                //comando.Parameters.Add(new SqlParameter("@FECH", obPersona.GetfechaNacimiento()));
 
-                var comando = new SqlCommand(insert, conexion);
-               
-                conexion.Open();
+                //conexion.Open();
 
-                // Se ejecuta la inserción y se valida si se realizó.
-                var cantidadDeRegistros = comando.ExecuteNonQuery();
+                bool se_inserto = persona.insertar_persona(obPersona.GetDNI(), obPersona.GetNombre(), obPersona.GetApellidos(), obPersona.GetGenero(), obPersona.GetCiudad(), obPersona.GetDireccion(), obPersona.GetfotoPerfil(), obPersona.GetfechaNacimiento());
+                //// Se ejecuta la inserción y se valida si se realizó.
+                //var cantidadDeRegistros = comando.ExecuteNonQuery();
 
-                if (cantidadDeRegistros > 0)
+                if (se_inserto)
                 {
                     MessageBox.Show("Persona ingresada");
                 }
@@ -104,20 +111,20 @@ namespace Parcial1
                 {
                     MessageBox.Show("Persona no ingresada, hubo algun error");
                 }
-
-                conexion.Close();
+                this.Close();
+                //conexion.Close();
 
 
                 //Limpiar los controles
-                txtNombre.Text = "";
-                txtApellidos.Text = "";
-                txtDNI.Text = "";
-                cbGenero.SelectedIndex = -1;
-                txtDireccion.Text = "";
-                cbCiudad.SelectedIndex = -1;
-                pbPerfil.Image = null;
-                //Setear el valor minimo del control de fecha para limpiarlo en el valueChange
-                dtpNacimiento.Value = DateTimePicker.MinimumDateTime;
+                //txtNombre.Text = "";
+                //txtApellidos.Text = "";
+                //txtDNI.Text = "";
+                //cbGenero.SelectedIndex = -1;
+                //txtDireccion.Text = "";
+                //cbCiudad.SelectedIndex = -1;
+                //pbPerfil.Image = null;
+                ////Setear el valor minimo del control de fecha para limpiarlo en el valueChange
+                //dtpNacimiento.Value = DateTimePicker.MinimumDateTime;
                 //validar si aun hay personas por agregar
              
                     
@@ -138,9 +145,18 @@ namespace Parcial1
             }
         }
 
-        private void informacionPersona_Load(object sender, EventArgs e)
+        //Convierte una imagen a un arreglo de bytes
+        public static byte[] ImagenAByte(Image img)
         {
-
+            ImageConverter converter = new ImageConverter();
+            return (byte[])converter.ConvertTo(img, typeof(byte[]));
+        }
+        //Convierte un arreglo de bytes a Imagen
+        public static Image byteAImagen(byte[] img)
+        {
+            var imageStream = new MemoryStream(img);
+            Image imagen = Image.FromStream(imageStream);
+            return imagen;
         }
     }
 }
