@@ -10,9 +10,6 @@ C:\Users\personal\Desktop\C#\Parcial4\Parcial1\obj\Debug\Parcial1.pdb
 C:\Users\personal\Desktop\C#\Parcial4\Parcial1\bin\Debug\Parcial1.exe.config
 C:\Users\personal\Desktop\C#\Parcial4\Parcial1\bin\Debug\Parcial1.exe
 C:\Users\personal\Desktop\C#\Parcial4\Parcial1\bin\Debug\Parcial1.pdb
-C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1_felipe\Parcial4\Parcial1\bin\Debug\Parcial1.exe.config
-C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1_felipe\Parcial4\Parcial1\bin\Debug\Parcial1.exe
-C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1_felipe\Parcial4\Parcial1\bin\Debug\Parcial1.pdb
 C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1_felipe\Parcial4\Parcial1\obj\Debug\Parcial4.csproj.AssemblyReference.cache
 C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1_felipe\Parcial4\Parcial1\obj\Debug\Parcial1.Bienvenida.resources
 C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1_felipe\Parcial4\Parcial1\obj\Debug\Parcial1.InformacionMascota.resources
@@ -20,10 +17,13 @@ C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\P
 C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1_felipe\Parcial4\Parcial1\obj\Debug\Parcial1.Properties.Resources.resources
 C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1_felipe\Parcial4\Parcial1\obj\Debug\Parcial4.csproj.GenerateResource.cache
 C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1_felipe\Parcial4\Parcial1\obj\Debug\Parcial4.csproj.CoreCompileInputs.cache
-C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1_felipe\Parcial4\Parcial1\obj\Debug\Parcial1.exe
-C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1_felipe\Parcial4\Parcial1\obj\Debug\Parcial1.pdb
+C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1_felipe\Parcial4\Parcial1\bin\Debug\Parcial1.exe.config
+C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1_felipe\Parcial4\Parcial1\bin\Debug\Parcial1.exe
+C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1_felipe\Parcial4\Parcial1\bin\Debug\Parcial1.pdb
 C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1_felipe\Parcial4\Parcial1\bin\Debug\EntityFramework.dll
 C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1_felipe\Parcial4\Parcial1\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1_felipe\Parcial4\Parcial1\bin\Debug\EntityFramework.xml
 C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1_felipe\Parcial4\Parcial1\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1_felipe\Parcial4\Parcial1\obj\Debug\Parcial4.csproj.CopyComplete
+C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1_felipe\Parcial4\Parcial1\obj\Debug\Parcial1.exe
+C:\Users\Cristian Zapata\Desktop\Repositorio Universidad\Taller_3_programacion\Parcial1_felipe\Parcial4\Parcial1\obj\Debug\Parcial1.pdb

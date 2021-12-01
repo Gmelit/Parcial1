@@ -75,7 +75,6 @@
       <DependentUpon>informacionPersona.cs</DependentUpon>
     </Compile>
     <Compile Include="Mascota.cs" />
-    <Compile Include="Modelo\Class1.cs" />
     <Compile Include="Modelo\CONSULTAR_MASCOTASPERSONA_Result.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
