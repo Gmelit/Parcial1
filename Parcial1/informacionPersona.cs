@@ -16,7 +16,7 @@ namespace Parcial1
     {
 
         string img = "";
-        Modelo.PERSONA persona = new Modelo.PERSONA();
+        public static Modelo.PERSONA persona = new Modelo.PERSONA();
         Persona obPersona = new Persona();
 
         public informacionPersona()

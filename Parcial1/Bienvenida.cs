@@ -16,6 +16,7 @@ namespace Parcial1
     {
 
         public static Modelo.PERSONA persona = new Modelo.PERSONA();
+        public static Modelo.MASCOTA mascota = new Modelo.MASCOTA();
 
         public Bienvenida()
         {
@@ -230,56 +231,83 @@ namespace Parcial1
         }
         private static Mascota consultar_mascota(string documento)
         {
-            Mascota mascota = new Mascota();
-            SqlConnection conexion = new SqlConnection(Properties.Settings.Default.conexion);
-            conexion.Open();
-            SqlCommand comando = new SqlCommand("CONSULTAR_MASCOTA", conexion);
+            //List<Mascota> masc = new List<mascota>() { mascota.consultar_mascota(documento) };
+            Mascota masc = new Mascota();
+            //Mascota mascota = new Mascota();
+            //SqlConnection conexion = new SqlConnection(Properties.Settings.Default.conexion);
+            //conexion.Open();
+            //SqlCommand comando = new SqlCommand("CONSULTAR_MASCOTA", conexion);
 
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.Add(new SqlParameter("@ID", documento));
+            //comando.CommandType = CommandType.StoredProcedure;
+            //comando.Parameters.Add(new SqlParameter("@ID", documento));
 
-            SqlDataReader reader = comando.ExecuteReader();
-            //Mientras se pueda leer
-            while (reader.Read())
-            {
-                mascota.SetDNIDUEÑO(reader["DNIDUENO"].ToString());
-                mascota.SetNombre(reader["NOMBRE"].ToString());
-            }
-            return mascota;
+            //SqlDataReader reader = comando.ExecuteReader();
+            ////Mientras se pueda leer
+            //while (reader.Read())
+            //{
+            //    mascota.SetDNIDUEÑO(reader["DNIDUENO"].ToString());
+            //    mascota.SetNombre(reader["NOMBRE"].ToString());
+            //}
+            return masc;
         }
 
         // Evento que me permite consultar todas las mascotas activas.
         private void btnConsultarMascotas_Click(object sender, EventArgs e)
         {
-            // Se conecta a la BD.
-            var conexion = new SqlConnection(Properties.Settings.Default.conexion);
+            //// Se conecta a la BD.
+            //var conexion = new SqlConnection(Properties.Settings.Default.conexion);
+            List<Mascota> mascotas =  mascota.consultar_mascotas();
 
-            // Se crea la consulta a realizar.
-            var query = "EXEC CONSULTAR_MASCOTAS";
+            int contador = 0;
 
-            // Se instancia un objeto SqlCommand con la consulta.
-            var comando = new SqlCommand(query, conexion);
+            dgvConsultas.Columns.Clear();
+            dgvConsultas.Rows.Clear();
+
+            dgvConsultas.Columns.Add("iD", "Id");
+            dgvConsultas.Columns.Add("Nombre", "Nombre");
+            dgvConsultas.Columns.Add("Tipo", "Tipo");
+            dgvConsultas.Columns.Add("DNIDUEÑO", "DNIDUEÑO");
+
+            foreach (Mascota mas in mascotas)
+            {
+                
+                dgvConsultas.Rows.Insert(contador,
+                mas.GetID(),
+                mas.GetNombre(),
+                mas.GetTipo(),
+                mas.GetDNIDUEÑO()
+                );
+                ++contador;
+            }
+
+            dgvConsultas.Refresh();
+            //// Se crea la consulta a realizar.
+            //var query = "EXEC CONSULTAR_MASCOTAS";
+
+            //// Se instancia un objeto SqlCommand con la consulta.
+            //var comando = new SqlCommand(query, conexion);
 
 
-            var dataAdapter = new SqlDataAdapter(comando);
+            //var dataAdapter = new SqlDataAdapter(comando);
 
 
-            var dataSet = new DataSet();
+            //var dataSet = new DataSet();
 
-            // Se le asigna al dataSet el resultado de la consulta.
-            dataAdapter.Fill(dataSet, "Mascotas");
+            //// Se le asigna al dataSet el resultado de la consulta.
+            //dataAdapter.Fill(dataSet, "Mascotas");
 
-            // Se llena el dataGrid con el resultado de la consulta que tiene el DataSet.
-            dgvConsultas.DataSource = dataSet.Tables[0];
+            //// Se llena el dataGrid con el resultado de la consulta que tiene el DataSet.
+            //dgvConsultas.DataSource = dataSet.Tables[0];
 
-            conexion.Close();
+            //conexion.Close();
         }
         // Evento que me permite consultar una mascota mediante un identificador.
         private void btnConsultarMascota_Click(object sender, EventArgs e)
         {
             // Ingreso del ID a buscar.
             string d = Interaction.InputBox("Ingrese el ID de la mascota a buscar");
-
+            
+            //Mascota m=  mascota.consultar_mascota(d);
             // Se conecta a la BD.
             var conexion = new SqlConnection(Properties.Settings.Default.conexion);
 

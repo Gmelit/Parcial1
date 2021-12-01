@@ -46,7 +46,7 @@ namespace Parcial1.Modelo
             int num_doc = 0;
             try
             {
-                num_doc = Convert.ToInt32(dni);
+                num_doc = Convert.ToInt32(id);
             }
             catch (Exception ex)
             {
